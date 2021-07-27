@@ -1,0 +1,27 @@
+<ion-menu side="start" 
+          menuId="first" 
+          contentId="main">
+    <ion-header>
+        <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <app-card-user></app-card-user>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle >
+                <ion-item *ngFor="let item of itemsMenu | async" class="link">
+                    <ion-icon slot="start" name={{item.icon}}></ion-icon>
+                    <ion-label routerLink={{item.redirecTo}}>{{item.name}}</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+    <ion-item class="link" (click)="signOut()">
+        <ion-icon slot="start" name="log-out"></ion-icon>
+        <ion-label>Sign out</ion-label>
+    </ion-item>
+    <ion-text class="version">ver. 1.0</ion-text>
+</ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+

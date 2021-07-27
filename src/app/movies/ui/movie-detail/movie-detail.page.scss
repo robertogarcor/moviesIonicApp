@@ -1,0 +1,29 @@
+ion-text h1 {
+    font-weight: bold;
+    padding: 0 8px;
+    font-size: 2em;
+    color : rgba(33,37,41,.9);
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    padding: 0 8px;
+    color : rgba(33,37,41,.7);
+}
+
+p.vote-average-value {
+    font-weight: bold;
+    font-size: 1.5em;
+    color : rgba(33,37,41,.7);
+} 
+
+ion-progress-bar {
+    height: 20px;
+}
+
+.progress-vote-left {
+    transform: rotate(180deg);   
+}

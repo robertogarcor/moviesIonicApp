@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/login"></ion-back-button>
+        </ion-buttons>
+        <ion-title>register</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+        <ion-item>
+            <ion-input type="text" id="username" placeholder="Username" formControlName="username" required></ion-input>
+            <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                <div class="errors-forms" *ngIf="username.errors?.required">
+                    *
+                </div>
+                <div class="errors-forms" *ngIf="username.errors?.minlength">
+                    Username must be at least 4 characters long.
+                </div>
+                <div class="errors-forms" *ngIf="username.errors?.NoUsernameMatch">
+                    Username exists is no valid.
+                </div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                <div class="errors-forms" *ngIf="email.errors?.required">
+                    *
+                </div>
+                <div class="errors-forms" *ngIf="email.errors?.email">
+                    Email is invalid.
+                </div>
+                <div class="errors-forms" *ngIf="email.errors?.NoEmailMatch">
+                    Email exists is no valid.
+                </div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-input type="Password" placeholder="Password" formControlName="password" required></ion-input>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div class="errors-forms" *ngIf="password.errors?.required">
+                    *
+                </div>
+                <div class="errors-forms" *ngIf="password.errors?.minlength">
+                    Password must be at least 4 characters long.
+                </div>
+            </div>
+        </ion-item>
+        <ion-item>
+            <ion-input type="Password" placeholder="Confirm Password" formControlName="confirmPassword"></ion-input>
+            <div *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+                <div class="errors-forms" *ngIf="confirmPassword.errors?.required">
+                    *
+                </div>
+                <div class="errors-forms" *ngIf="confirmPassword.errors?.NoPassswordMatch">          
+                    Passwords doesnot match.
+                </div>           
+            </div>
+        </ion-item>
+        <ion-button [disabled]="!registerForm.valid" type="submit" color="secondary" expand="full">REGISTER</ion-button>
+    </form>
+</ion-content>

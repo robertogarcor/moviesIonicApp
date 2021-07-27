@@ -1,0 +1,7 @@
+[
+    {
+        "icon" : "easel",
+        "name" : "Movies", 
+        "redirecTo" : "/movies"     
+    }
+]

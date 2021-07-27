@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <ion-item>
+            <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type="Password" placeholder="Password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-button type="submit" color="secondary" expand="full">SIGN IN</ion-button>
+        <ion-row>
+            <ion-col class="ion-text-center createAccount">
+                <div >
+                    If you don't have an account, please <a routerLink="/register">register</a> first!
+                </div>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

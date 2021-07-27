@@ -1,0 +1,12 @@
+<!-- Movie Item -->
+<div class="movie-item">
+    <a role="button">
+        <ion-img src="https://image.tmdb.org/t/p/w185/{{movieItem.poster_path}}" alt="image-movie" title="image-title"></ion-img>
+    </a>
+    <ion-text>
+        <p class="movie-item-title">{{movieItem.title}}</p>
+    </ion-text>
+    <ion-text>
+        <p class="movie-item-release-date">{{movieItem.release_date | date : 'MMM, y'}}</p>
+    </ion-text>
+</div>

@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "username" : "roberto", 
+        "email" : "roberto@email.es", 
+        "password":"U2FsdGVkX19++fZ/mLAC5ssCLcGHmQvSpyZev3kXtUQ="
+    },
+    {
+        "id" : 2,
+        "username" : "aaaa", 
+        "email" : "aaaa@email.es", 
+        "password":"U2FsdGVkX19++fZ/mLAC5ssCLcGHmQvSpyZev3kXtUQ=" 
+    }
+]

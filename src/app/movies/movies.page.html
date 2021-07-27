@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button (click)="toggleMenu()">
+                <ion-icon slot="icon-only" name="menu"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button (click)="signOut()">
+                <ion-icon slot="icon-only" name="log-out"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>movies</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="movies" class="ion-text-center">
+    <ion-grid >
+        <ion-row>
+            <ion-col *ngFor="let movie of movies" [routerLink]="['/movies', movie.id]">
+                <app-movie-item *ngIf="movie" [movieItem]="movie"></app-movie-item>
+            </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll threshold="150px" (ionInfinite)="newData($event)">
+        <ion-infinite-scroll-content
+            loadingSpinner="lines"
+            loadingText="Loading data…">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>
